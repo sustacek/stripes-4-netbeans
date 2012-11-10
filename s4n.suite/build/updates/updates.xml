@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE module_updates PUBLIC "-//NetBeans//DTD Autoupdate Catalog 2.6//EN" "http://www.netbeans.org/dtds/autoupdate-catalog-2_6.dtd">
-<module_updates timestamp="20/20/17/10/11/2012">
+<module_updates timestamp="41/32/17/10/11/2012">
 
 
 
@@ -12,7 +12,7 @@
     
 </module>
 
-<module codenamebase="org.netbeans.modules.web.stripes.update" distribution="org-netbeans-modules-web-stripes-update.nbm" downloadsize="3160" homepage="" license="AD9FBBC9" moduleauthor="" needsrestart="false" releasedate="2012/11/10">
+<module codenamebase="org.netbeans.modules.web.stripes.update" distribution="org-netbeans-modules-web-stripes-update.nbm" downloadsize="3176" homepage="" license="AD9FBBC9" moduleauthor="" needsrestart="false" releasedate="2012/11/10">
     <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="org.netbeans.modules.web.stripes.update" OpenIDE-Module-Display-Category="Web &amp; Java EE" OpenIDE-Module-Implementation-Version="121110" OpenIDE-Module-Java-Dependencies="Java &gt; 1.5" OpenIDE-Module-Long-Description="&lt;p&gt;This autoupdate center works for keeping the Stripes 4 Netneans plugin up-to-date.&lt;/p&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.modules.autoupdate.services &gt; 1.4" OpenIDE-Module-Name="Stripes 4 Netbeans Update Center" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
