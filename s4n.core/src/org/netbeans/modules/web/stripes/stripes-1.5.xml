@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE library PUBLIC "-//NetBeans//DTD Library Declaration 1.0//EN" "http://www.netbeans.org/dtds/library-declaration-1_0.dtd">
+<library version="1.0">
+    <name>Stripes 1.5</name>
+    <type>j2se</type>
+    <localizing-bundle>org.jsworks.modules.stripes4netbeans.Bundle</localizing-bundle>
+    <volume>
+        <type>classpath</type>
+        <resource>jar:nbinst://org.jsworks.modules.stripes4netbeans/libs/stripes-1.5.1.jar!/</resource>
+        <resource>jar:nbinst://org.jsworks.modules.stripes4netbeans/libs/commons-logging.jar!/</resource>
+        <resource>jar:nbinst://org.jsworks.modules.stripes4netbeans/libs/cos.jar!/</resource>
+    </volume>
+    <volume>
+        <type>src</type>
+        <resource>jar:nbinst://org.jsworks.modules.stripes4netbeans/sources/stripes-1.5.1-sources.zip!/</resource>
+    </volume>
+    <volume>
+        <type>javadoc</type>
+        <resource>jar:nbinst://org.jsworks.modules.stripes4netbeans/docs/stripes-1.5.1-docs.zip!/</resource>
+    </volume>
+</library>

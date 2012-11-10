@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See harness/README in the NetBeans platform -->
+<!-- for some information on what you could do (e.g. targets to override). -->
+<!-- If you delete this file and reopen the project it will be recreated. -->
+<project name="Stripes4NetbeansSuite" basedir=".">
+    <description>Builds the module suite Stripes4NetbeansSuite.</description>
+    <import file="nbproject/build-impl.xml"/>
+    
+    <tstamp />
+    
+    <tstamp>
+        <format property="today" pattern="yyyy-MM-dd" locale="en,US"/>
+    </tstamp>
+    
+    <property name="major.minor" value="0.2" />
+    <property name="build.number.file" value="${basedir}/version.properties"/>
+    <property name="gcupload.jar" value="D:\devel\lib\ant-googlecode-0.0.1.jar"/>
+    
+    <target name="upload-to-googlecode" depends="" if="gcupload.file">
+        <taskdef classname="net.bluecow.googlecode.ant.GoogleCodeUploadTask" 
+            classpath="${gcupload.jar}" name="gcupload"/>
+        
+        <echo>Uploading file ${gcupload.file} as ${gcupload.target.name}</echo>
+            
+        <gcupload 
+                username="sustacek" 
+                password="VT3Df4yv2wv8" 
+                projectname="stripes4netbeans" 
+                filename="${gcupload.file}" 
+                targetfilename="${gcupload.target.name}"
+                summary="${gcupload.summary}" 
+                labels="Featured, Type-Package, OpSys-All" 
+                verbose="true" />
+    </target>
+    
+    <target name="release-nbm-all" depends="">
+        
+        <antcall target="upload-to-googlecode">
+            <param name="gcupload.file" value="D:\devel\repository\Stripes4Netbeans\s4n.suite\build\updates\updates.xml" />
+            <param name="gcupload.target.name" value="updates.aa.xml" />
+            <param name="gcupload.summary" value="" />
+        </antcall>
+        
+        <antcall target="upload-to-googlecode">
+            <param name="gcupload.file" value="${basedir}\build\updates\org-jsworks-modules-stripes4netbeans.nbm" />
+            <param name="gcupload.target.name" value="org-jsworks-modules-stripes4netbeans.nbm" />
+            <param name="gcupload.summary" 
+                value="Version ${major.minor} build ${file.build.number} of Stripes Netbeans plugin from ${TODAY}. ${release.message}" />
+        </antcall>
+        
+        <antcall target="upload-to-googlecode">
+            <param name="gcupload.file" value="${basedir}\build\updates\org-jsworks-modules-s4nuc.nbm" />
+            <param name="gcupload.target.name" value="org-jsworks-modules-s4nuc.nbm" />
+            <param name="gcupload.summary" value="" />
+        </antcall>
+        
+    </target>
+    
+    <target name="aaa-upload-test">
+        
+    </target>
+    
+</project>

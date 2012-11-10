@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="${encoding}"?>
+
+<%-- 
+    Document   : ${name}
+    Created on : ${date}, ${time}
+    Author     : ${user}
+--%>
+
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8" isELIgnored="false"%>
+<%@ taglib prefix="s" uri="http://stripes.sourceforge.net/stripes.tld" %>
+
+<s:layout-render name="${layout_name}">
+    <s:layout-component name="body">
+
+        <!-- TODO your jsp, htmt etc. code goes here-->
+
+    </s:layout-component>
+</s:layout-render>
+

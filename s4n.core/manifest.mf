@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.6.0_02-b06 (Sun Microsystems Inc.)
+OpenIDE-Module: org.netbeans.modules.web.stripes
+OpenIDE-Module-Layer: org/netbeans/modules/web/stripes/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/netbeans/modules/web/stripes/Bun
+ dle.properties
+OpenIDE-Module-Specification-Version: 1.0.89
+Built-By: Josef Sustacek
+

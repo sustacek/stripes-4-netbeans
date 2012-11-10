@@ -1,0 +1,61 @@
+<#assign licenseFirst = "/*">
+<#assign licensePrefix = " * ">
+<#assign licenseLast = " */">
+<#include "../Licenses/license-${project.license}.txt">
+
+<#if package?? && package != "">
+package ${package};
+</#if>
+
+<#if extend_action_bean >
+    <#if action_bean_class.packageName != "" && 
+        action_bean_class.packageName != package >
+import ${action_bean_class.fullName};
+    </#if>
+<#else>
+import net.sourceforge.stripes.action.ActionBean;
+</#if>
+<#if override_context_methods >
+import net.sourceforge.stripes.action.ActionBeanContext;
+    <#if context_class.packageName != "" && 
+        context_class.fullName != "net.sourceforge.stripes.action.ActionBeanContext" &&
+        context_class.packageName != package >
+import ${context_class.fullName};
+    </#if>
+</#if>
+import net.sourceforge.stripes.action.DefaultHandler;
+import net.sourceforge.stripes.action.Resolution;
+<#if use_url_binding>
+import net.sourceforge.stripes.action.UrlBinding;
+</#if>
+
+/**
+ *
+ * @author ${user}
+ */
+<#if use_url_binding>
+@UrlBinding("${url_binding}")
+</#if>
+<#if extend_action_bean>
+public class ${name} extends ${action_bean_class.className} {
+<#else>
+public class ${name} implements ActionBean {
+</#if>
+<#if override_context_methods>
+    private ${context_class.className} context;
+    
+    public void setContext(ActionBeanContext context) {
+        this.context = <#if context_class.fullName != "net.sourceforge.stripes.action.ActionBeanContext">(${context_class.className})</#if>context;
+    }
+
+    public ${context_class.className} getContext() {
+        return context;
+    }
+</#if>
+
+    @DefaultHandler
+    public Resolution doView() {
+        // TODO 
+        throw new UnsupportedOperationException();
+    }
+}

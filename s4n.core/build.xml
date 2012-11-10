@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See harness/README in the NetBeans platform -->
+<!-- for some information on what you could do (e.g. targets to override). -->
+<!-- If you delete this file and reopen the project it will be recreated. -->
+<project name="org.netbeans.modules.web.stripes" default="netbeans" basedir=".">
+    <description>Builds, tests, and runs the project org.netbeans.modules.web.stripes</description>
+    <import file="nbproject/build-impl.xml"/>
+    
+    <tstamp />
+    
+    <tstamp>
+        <format property="today" pattern="yyyy-MM-dd" locale="en,US"/>
+    </tstamp>
+    
+    <property name="major.minor" value="1.0" />
+    <property name="build.number.file" value="${basedir}/version.properties"/>
+    
+    <property file="${build.number.file}" prefix="file" />
+    <property name="release.version" value="${major.minor}.${file.build.number}" />
+    
+    <property name="nbm" value="org-netbeans-modules-web-stripes.nbm" />    
+    <property name="manifest.file.name" value="manifest.mf" />    
+    
+    <target name="aaa-test-version" >
+        <echo message="Current version is ${file.build.number}"></echo>
+        <echo message="File build into ${nbm} (${basedir}\build\${nbm})"></echo>
+        <echo message="File uploaded as ${release.file.name}"></echo>
+        <echo message="Today ${today}"></echo>
+        <echo message="Today for human ${TODAY}"></echo>
+        
+        <antcall target="increment-the-build-number"/>
+        <property file="${build.number.file}" prefix="file" />
+        <echo message="Current version after increment is ${file.build.number}"></echo>
+    </target>
+    
+    <target name="release-nbm" depends="nbm">
+        <property file="${build.number.file}" prefix="file" />
+        <echo message="Current version is ${major.minor} build ${file.build.number}" />
+        <property name="release.file.name" 
+                value="org-netbeans-modules-web-stripes_${major.minor}-build-${file.build.number}_${today}.nbm" />
+        
+        <input message="Additional message for this release:" 
+                addproperty="release.message" />
+        
+        <antcall target="upload-to-googlecode" >
+            <param name="gcupload.filename" value="${basedir}\build\${nbm}" />
+            <param name="gcupload.targetfilename" value="${release.file.name}" />
+            <param name="gcupload.summary" value="Version ${major.minor} build ${file.build.number} of Stripes Netbeans plugin from ${TODAY}. ${release.message}" />
+            <param name="gcupload.labels" value="Featured, Type-Package, OpSys-All" />
+        </antcall>
+    </target>
+        
+</project>

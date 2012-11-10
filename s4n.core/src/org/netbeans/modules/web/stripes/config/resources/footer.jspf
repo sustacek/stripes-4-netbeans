@@ -1,0 +1,11 @@
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8" 
+    isELIgnored="false"%>
+    
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<a href="http://validator.w3.org/check/referer" 
+    title="Check the validity of this site&#8217;s XHTML">xhtml</a>
+<a href="http://jigsaw.w3.org/css-validator/check/referer" 
+    title="Check the validity of this site&#8217;s CSS">css</a>
+
+<span>Footer message...</span>

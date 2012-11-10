@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Templates">
+        <folder name="Stripes">
+            <attr name="position" intvalue="810"/>
+            <file name="ActionBeanTemplate.java" url="filetypes/template/ActionBeanTemplate.java.template">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.modules.web.stripes.filetypes.Bundle"/>
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:org/netbeans/modules/java/resources/class.gif"/>
+                <attr name="position" intvalue="100"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+                <attr name="template" boolvalue="true"/>
+                
+                <attr name="templateCategory" stringvalue="servlet-types"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/netbeans/modules/web/stripes/filetypes/template/description/ActionBean.html"/>
+                <attr name="templateWizardIterator" newvalue="org.netbeans.modules.web.stripes.wizards.ActionBeanWizardIterator"/>
+            </file>
+            <file name="LayoutDefinitionTemplate.jsp" url="filetypes/template/LayoutDefinitionTemplate.jsp.template">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.modules.web.stripes.filetypes.Bundle"/>
+                <attr name="position" intvalue="200"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+                <attr name="templateCategory" stringvalue="web-types"/>
+                <attr name="template" boolvalue="true"/>
+                
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/netbeans/modules/web/stripes/filetypes/template/description/TemplateDefinition.html"/>
+            </file>
+            <file name="LayoutUsageTemplate.jsp" url="filetypes/template/LayoutUsageTemplate.jsp.template">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.modules.web.stripes.filetypes.Bundle"/>
+                <attr name="position" intvalue="300"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+                <attr name="templateCategory" stringvalue="web-types"/>
+                <attr name="template" boolvalue="true"/>
+                
+                <attr name="templateWizardURL" urlvalue="nbresloc:/org/netbeans/modules/web/stripes/filetypes/template/description/TemplateUsage.html"/>
+                <attr name="templateWizardIterator" newvalue="org.netbeans.modules.web.stripes.wizards.LayoutDefinitionWizardIterator"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="j2ee">
+        <folder name="webtier">
+            <folder name="framework">
+                <file name="org.netbeans.modules.web.stripes.config.StripesWebFrameworkProvider.instance">
+                    <attr name="description" stringvalue="plugin-description"/>
+                    <attr name="position" intvalue="1000"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="org-netbeans-api-project-libraries">
+        <folder name="Libraries">
+            <file name="JSTL1.2.xml" url="jstl-1.2.xml"/>
+            <file name="Stripes1.5.xml" url="stripes-1.5.xml"/>
+        </folder>
+    </folder>
+    <folder name="JSPPalette">
+        <folder name="Stripes">
+            <attr name="position" intvalue="600"/>
+            <file name="UseAcBean.xml" url="nbresloc:/org/netbeans/modules/web/stripes/palette/items/resources/UseAcBean.xml">
+                <attr name="position" intvalue="100"/>
+            </file>
+            <file name="Link.xml" url="palette/items/resources/Link.xml">
+                <attr name="position" intvalue="200"/>
+            </file>
+            <file name="Errors.xml" url="palette/items/resources/Errors.xml">
+                <attr name="position" intvalue="300"/>
+            </file>
+            <file name="Messages.xml" url="palette/items/resources/Messages.xml">
+                <attr name="position" intvalue="400"/>
+            </file>
+            <file name="Label.xml" url="palette/items/resources/Label.xml">
+                <attr name="position" intvalue="500"/>
+            </file>
+        </folder>
+        <folder name="Stripes Layout">
+            <attr name="position" intvalue="700"/>
+            <file name="LayoutComp.xml" url="palette/items/resources/LayoutComp.xml">
+                <attr name="position" intvalue="100"/>
+            </file>
+            <file name="LayoutDef.xml" url="palette/items/resources/LayoutDef.xml">
+                <attr name="position" intvalue="200"/>
+            </file>
+            <file name="LayoutRend.xml" url="palette/items/resources/LayoutRend.xml">
+                <attr name="position" intvalue="300"/>
+            </file>
+        </folder>
+        <folder name="Stripes Forms">
+            <attr name="position" intvalue="800"/>
+            <file name="Form.xml" url="palette/items/resources/Form.xml">
+                <attr name="position" intvalue="100"/>
+            </file>
+            
+            <file name="Text.xml" url="palette/items/resources/Text.xml">
+                <attr name="position" intvalue="200"/>
+            </file>
+            <file name="Password.xml" url="palette/items/resources/Password.xml">
+                <attr name="position" intvalue="300"/>
+            </file>
+            <file name="Checkbox.xml" url="palette/items/resources/Checkbox.xml">
+                <attr name="position" intvalue="400"/>
+            </file>
+            <file name="Radio.xml" url="palette/items/resources/Radio.xml">
+                <attr name="position" intvalue="500"/>
+            </file>
+            
+            <file name="Select.xml" url="palette/items/resources/Select.xml">
+                <attr name="position" intvalue="600"/>
+            </file>
+            <file name="Option.xml" url="palette/items/resources/Option.xml">
+                <attr name="position" intvalue="700"/>
+            </file>
+            <file name="OptsColl.xml" url="palette/items/resources/OptsColl.xml">
+                <attr name="position" intvalue="800"/>
+            </file>
+            <file name="OptsEnum.xml" url="palette/items/resources/OptsEnum.xml">
+                <attr name="position" intvalue="900"/>
+            </file>
+            <file name="OptsMap.xml" url="palette/items/resources/OptsMap.xml">
+                <attr name="position" intvalue="1000"/>
+            </file>
+            
+            <file name="Textarea.xml" url="palette/items/resources/Textarea.xml">
+                <attr name="position" intvalue="1100"/>
+            </file>
+            <file name="File.xml" url="palette/items/resources/File.xml">
+                <attr name="position" intvalue="1200"/>
+            </file>
+            <file name="Hidden.xml" url="palette/items/resources/Hidden.xml">
+                <attr name="position" intvalue="1300"/>
+            </file>
+            
+            <file name="Submit.xml" url="palette/items/resources/Submit.xml">
+                <attr name="position" intvalue="1400"/>
+            </file>
+            <file name="Button.xml" url="palette/items/resources/Button.xml">
+                <attr name="position" intvalue="1500"/>
+            </file>
+            <file name="Reset.xml" url="palette/items/resources/Reset.xml">
+                <attr name="position" intvalue="1600"/>
+            </file>
+            
+            <file name="Image.xml" url="palette/items/resources/Image.xml">
+                <attr name="position" intvalue="1700"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Editors">
+        <folder name="text">
+            <folder name="x-jsp">
+                <folder name="HyperlinkProviders">
+
+                    <file name="StripesBeanClassHyperlinkProvider.instance">
+                        <attr name="instanceClass" stringvalue="org.netbeans.modules.web.stripes.hyperlinks.StripesBeanClassHyperlinkProvider"/>
+                        <attr name="instanceOf" stringvalue="org.netbeans.lib.editor.hyperlink.spi.HyperlinkProvider"/>
+                    </file>
+
+                </folder>
+            </folder>
+            <folder name="x-java">
+                <folder name="HyperlinkProviders">
+
+                    <file name="StripesActionBeanToJspHyperlinkProvider.instance">
+                        <attr name="instanceClass" stringvalue="org.netbeans.modules.web.stripes.hyperlinks.StripesActionBeanToJspHyperlinkProvider"/>
+                        <attr name="instanceOf" stringvalue="org.netbeans.lib.editor.hyperlink.spi.HyperlinkProvider"/>
+                    </file>
+
+                </folder>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>
