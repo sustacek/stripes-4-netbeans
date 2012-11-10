@@ -4,7 +4,6 @@
  */
 package org.netbeans.modules.web.stripes.wizards;
 
-import org.netbeans.modules.web.stripes.util.StringUtils;
 import java.awt.Component;
 import java.io.IOException;
 import java.util.Collections;
@@ -14,21 +13,20 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
-
 import org.netbeans.api.java.project.JavaProjectConstants;
-import org.netbeans.spi.project.ui.templates.support.Templates;
 import org.netbeans.api.project.Project;
 import org.netbeans.api.project.ProjectUtils;
 import org.netbeans.api.project.SourceGroup;
 import org.netbeans.api.project.Sources;
+import org.netbeans.modules.web.stripes.util.StringUtils;
+import static org.netbeans.modules.web.stripes.wizards.ActionBeanWizardPanel.*;
 import org.netbeans.spi.java.project.support.ui.templates.JavaTemplates;
+import org.netbeans.spi.project.ui.templates.support.Templates;
 import org.openide.WizardDescriptor;
 import org.openide.cookies.OpenCookie;
 import org.openide.filesystems.FileObject;
 import org.openide.loaders.DataFolder;
 import org.openide.loaders.DataObject;
-
-import static org.netbeans.modules.web.stripes.wizards.ActionBeanWizardPanel.*;
 
 public final class ActionBeanWizardIterator implements
         WizardDescriptor.InstantiatingIterator {
@@ -49,10 +47,9 @@ public final class ActionBeanWizardIterator implements
             SourceGroup[] groups = s.getSourceGroups(JavaProjectConstants.SOURCES_TYPE_JAVA);
             WizardDescriptor.Panel targetChooser =
                     0 == groups.length ?
-                    Templates.createSimpleTargetChooser(
-                        project, 
-                        groups, 
-                        new ActionBeanWizardPanel(wizard)) :
+                    Templates.buildSimpleTargetChooser(project, groups)
+                        .bottomPanel(new ActionBeanWizardPanel(wizard))
+                        .create() :
                     JavaTemplates.createPackageChooser(
                         project, 
                         groups, 
@@ -127,7 +124,7 @@ public final class ActionBeanWizardIterator implements
         DataObject newOne = 
                 templateDataObject.createFromTemplate(targetDataFolder, name, replacements);
 
-        OpenCookie openCookie = newOne.getCookie(OpenCookie.class);
+        OpenCookie openCookie = newOne.getLookup().lookup(OpenCookie.class);
         if (openCookie != null) {
             openCookie.open();
         } 

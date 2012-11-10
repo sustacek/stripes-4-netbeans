@@ -44,8 +44,9 @@ public final class LayoutDefinitionWizardIterator implements WizardDescriptor.In
             Sources s = ProjectUtils.getSources(p);
             SourceGroup[] groups = s.getSourceGroups(Sources.TYPE_GENERIC);
             WizardDescriptor.Panel customizedTargetChooser = 
-                    Templates.createSimpleTargetChooser(p, groups, 
-                        new LayoutDefinitionWizardPanel(wizard));
+                    Templates.buildSimpleTargetChooser(p, groups)
+                        .bottomPanel(new LayoutDefinitionWizardPanel(wizard))
+                        .create();
 
             panels = new WizardDescriptor.Panel[]{
                         customizedTargetChooser

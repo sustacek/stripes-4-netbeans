@@ -23,7 +23,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.netbeans.modules.web.stripes.util.Constants;
 import org.netbeans.api.java.classpath.ClassPath;
 import org.netbeans.api.java.project.JavaProjectConstants;
 import org.netbeans.api.java.project.classpath.ProjectClassPathModifier;
@@ -34,7 +33,6 @@ import org.netbeans.api.project.SourceGroup;
 import org.netbeans.api.project.Sources;
 import org.netbeans.api.project.libraries.Library;
 import org.netbeans.api.project.libraries.LibraryManager;
-
 import org.netbeans.modules.j2ee.dd.api.common.CommonDDBean;
 import org.netbeans.modules.j2ee.dd.api.common.CreateCapability;
 import org.netbeans.modules.j2ee.dd.api.common.InitParam;
@@ -44,21 +42,20 @@ import org.netbeans.modules.j2ee.dd.api.web.Filter;
 import org.netbeans.modules.j2ee.dd.api.web.FilterMapping;
 import org.netbeans.modules.j2ee.dd.api.web.Servlet;
 import org.netbeans.modules.j2ee.dd.api.web.ServletMapping;
-
 import org.netbeans.modules.j2ee.dd.api.web.WebApp;
-
 import org.netbeans.modules.j2ee.dd.api.web.WelcomeFileList;
 import org.netbeans.modules.web.api.webmodule.ExtenderController;
 import org.netbeans.modules.web.api.webmodule.WebModule;
 import org.netbeans.modules.web.spi.webmodule.WebFrameworkProvider;
 import org.netbeans.modules.web.spi.webmodule.WebModuleExtender;
 import org.netbeans.modules.web.stripes.palette.StripesPaletteUtilities;
+import org.netbeans.modules.web.stripes.util.Constants;
 import org.openide.ErrorManager;
 import org.openide.filesystems.FileLock;
 import org.openide.filesystems.FileObject;
+import org.openide.filesystems.FileStateInvalidException;
 import org.openide.filesystems.FileSystem;
 import org.openide.filesystems.FileUtil;
-import org.openide.filesystems.Repository;
 import org.openide.util.Exceptions;
 
 public class StripesWebFrameworkProvider extends WebFrameworkProvider {
@@ -312,7 +309,7 @@ public class StripesWebFrameworkProvider extends WebFrameworkProvider {
                     copyResource("StripesResources_" + locale + ".properties", 
                         FileUtil.createData(resourcesRoot, "StripesResources_" + locale + ".properties"));
                     
-                    log.info(locale + " resource bundle created");
+                    log.log(Level.INFO, "{0} resource bundle created", locale);
                 } 
                 
             }
@@ -346,7 +343,7 @@ public class StripesWebFrameworkProvider extends WebFrameworkProvider {
         protected FileObject copyResource(String resourceName, FileObject target) throws UnsupportedEncodingException, IOException {
             InputStream in = getClass().getResourceAsStream("resources/" + resourceName);
             String lineSeparator = System.getProperty("line.separator");
-            StringBuffer buffer = new StringBuffer();
+            StringBuilder buffer = new StringBuilder();
             BufferedReader reader = new BufferedReader(new InputStreamReader(in, ENCODING));
             try {
                 String line = reader.readLine();
@@ -393,8 +390,8 @@ public class StripesWebFrameworkProvider extends WebFrameworkProvider {
                 } catch (IOException ioe) {
                     Exceptions.printStackTrace(ioe);
                     Logger.getLogger("global").log(Level.INFO,
-                            "ProjectClassPathModifier could not add " +
-                            "the " + libraryName + " library to project's classpath.");
+                            "ProjectClassPathModifier could not add the {0} "
+                            + "library to project''s classpath.", libraryName);
                 }
             }
 
@@ -501,8 +498,8 @@ public class StripesWebFrameworkProvider extends WebFrameworkProvider {
             return LibraryManager.getDefault().getLibrary(name);
         }
 
-        protected FileSystem getDefaultFileSystem() {
-            return Repository.getDefault().getDefaultFileSystem();
+        protected FileSystem getDefaultFileSystem() throws FileStateInvalidException {
+            return FileUtil.getConfigRoot().getFileSystem();
         }
 
         private String getLocaleId(String localeLabel){
@@ -518,11 +515,11 @@ public class StripesWebFrameworkProvider extends WebFrameworkProvider {
         private String getLocalePickerContent(Locale defaultLocalization, 
                 List<Locale> includedLocalizations) {
             StringBuilder sb = new StringBuilder();
-            sb.append(defaultLocalization + ":" + ENCODING + ",");
+                    sb.append(defaultLocalization).append(":" + ENCODING + ",");
             
             for(Locale locale: includedLocalizations){
                 if(!locale.equals(defaultLocalization)){
-                    sb.append(locale + ":" + ENCODING + ",");
+                    sb.append(locale).append(":" + ENCODING + ",");
                 }
             }
             
