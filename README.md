@@ -1,7 +1,8 @@
 Currently available features
 ======================================
 
- * currently supported *only* on *platform 6.5*
+ * currently supported *only* on *platform 7.2*
+   * older version for 6.5 - 6.9 can be downloaded from NetBenas plugins (http://plugins.netbeans.org/plugin/16224/stripes-4-netbeans)
  * *Stripes web framework support* - when creating new web application project (looks like other frameworks support)
    * include all libraries, add default localizations etc.
  * *action bean* class *template*
