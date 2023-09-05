@@ -24,7 +24,6 @@
             
         <gcupload 
                 username="sustacek" 
-                password="VT3Df4yv2wv8" 
                 projectname="stripes4netbeans" 
                 filename="${gcupload.file}" 
                 targetfilename="${gcupload.target.name}"
